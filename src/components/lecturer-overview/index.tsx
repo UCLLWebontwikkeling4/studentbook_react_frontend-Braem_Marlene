@@ -17,7 +17,8 @@ const MessageOverview: React.FC = () => {
     };
 
     return (
-        <section className="row justify-content-center">
+        <section className="message row justify-content-center">
+            <h1>Messages</h1>
             <MessageOverviewTable
                 messages={messages}
             />
