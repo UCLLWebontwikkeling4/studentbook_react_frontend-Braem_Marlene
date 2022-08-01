@@ -38,3 +38,14 @@ export interface Chat {
     Users: User[];
     Messages: Message[];
 }
+
+export interface Response {
+    status: 'error' | 'success';
+    userid?: number;
+    errorMessage?: string;
+}
+
+export interface StatusMessage {
+    message: string;
+    type: 'error' | 'success';
+}
