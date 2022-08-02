@@ -123,3 +123,10 @@ body{
 .box_marge{
     margin-top: 2em;
 }
+
+.friends{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 8px;
+}
