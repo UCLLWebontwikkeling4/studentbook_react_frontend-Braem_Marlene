@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import UserOverview from './components/user-overview';
 import LoginPage from './components/login';
+import Logout from './components/login/logout';
 
 
 function App() {
@@ -28,8 +29,8 @@ function App() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/login" className="nav-link px-4 fs-5 text-white">
-                                Login
+                                <Link to="/logout" className="nav-link px-4 fs-5 text-white">
+                                Logout
                                 </Link>
                             </li>
                         </ul>
@@ -38,7 +39,7 @@ function App() {
                 <main className="container mt-5">
                     <Routes>
                         <Route path="/" element={<UserOverview />} />
-                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/logout" element={<Logout />} />
                     </Routes>
                 </main>
             </>
@@ -61,11 +62,6 @@ function App() {
                     <nav>
                         <ul className="nav justify-content-center">
                             <li>
-                                <Link to="/messages" className="nav-link px-4 fs-5 text-white">
-                                    Messages
-                                </Link>
-                            </li>
-                            <li>
                                 <Link to="/" className="nav-link px-4 fs-5 text-white">
                                 Login
                                 </Link>
@@ -75,7 +71,6 @@ function App() {
                 </header>
                 <main className="container mt-5">
                     <Routes>
-                        <Route path="/messages" element={<UserOverview />} />
                         <Route path="/" element={<LoginPage />} />
                     </Routes>
                 </main>

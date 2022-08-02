@@ -28,14 +28,16 @@ const Login: React.FC = () => {
             const user: AxiosResponse<User> = await UserService.getUser(username);
 
             //id in sessionStorage zetten
-            window.sessionStorage.setItem("loggedinUser", user.data.username.toString())
-            
+            window.sessionStorage.setItem("loggedinUser", user.data.username.toString())        
+           
             setStatusMessages([{message: "User is loggedin", type: 'success'}])
             
             window.location.reload();
+            navigate("/");
+            
 
         } catch (any) {
-            setStatusMessages([...statusMessages, {message: "Naam niet gevonden", type: "error"} ])
+            setStatusMessages([...statusMessages, {message: "Username not found", type: "error"} ])
             setNameInput('');
         }
     }
@@ -49,8 +51,6 @@ const Login: React.FC = () => {
             setStatusMessages([{ message: 'Please fill in name.', type: 'error' }]);
         }else{
             login(nameInput);
-            navigate("/");
-
         }
     
     }
