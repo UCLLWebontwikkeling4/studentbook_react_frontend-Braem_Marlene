@@ -13,10 +13,15 @@ const Logout: React.FC = () => {
 
     const logout = async () => {
         try {
-            // await UserService.logout();
+
+            //user ofline zetten in database
+            const username = window.sessionStorage.getItem("loggedinUser");
+            await UserService.changeStatus('{"username": "'+username+'","status": "Offline"}');
+
+            //user uit sessionStorage halen
             window.sessionStorage.removeItem("loggedinUser");
             window.sessionStorage.removeItem("loggedinUserStatus");
-            
+
             navigate("/");
             window.location.reload();
         } catch (any) {
