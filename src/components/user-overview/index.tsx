@@ -7,6 +7,8 @@ import ChangeStatus from './ChangeStatusForm';
 import useInterval from 'use-interval';
 import FriendService from '../../services/FriendService';
 import FriendsOverview from './FriendsOverview';
+import AddMessage from './MessageForm';
+
 
 
 const MessageOverview: React.FC = () => {
@@ -55,6 +57,8 @@ const MessageOverview: React.FC = () => {
              <div className='right_box'>
                 <ChangeStatus 
                     status={status}
+                />
+                <AddMessage
                 />
                 <FriendsOverview
                     friends={friends}

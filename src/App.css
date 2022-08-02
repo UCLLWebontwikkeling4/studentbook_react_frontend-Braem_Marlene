@@ -130,3 +130,14 @@ body{
     border-radius: 5px;
     margin: 8px;
 }
+
+.form_message{
+    display: flex;
+    flex-direction: column;
+}
+
+.publish_button{
+    width: 5em;
+}
+
+.text_message{ height: 8em;}
