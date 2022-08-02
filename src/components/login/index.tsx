@@ -28,7 +28,13 @@ const Login: React.FC = () => {
             const user: AxiosResponse<User> = await UserService.getUser(username);
 
             //id in sessionStorage zetten
-            window.sessionStorage.setItem("loggedinUser", user.data.username.toString())        
+            window.sessionStorage.setItem("loggedinUser", user.data.username.toString())   
+            
+            //als er geen userstatus is in de sessionStorge wordt deze online gezet
+            if (window.sessionStorage.getItem("loggedinUserStatus") === null) {
+                await UserService.changeStatus('{"username": "'+username+'","status": "Online"}');//deze lijn zou een error moeten gooien hopelijk indien het niet lukt
+                window.sessionStorage.setItem("loggedinUserStatus", "Online")
+            }
            
             setStatusMessages([{message: "User is loggedin", type: 'success'}])
             
@@ -78,6 +84,7 @@ const Login: React.FC = () => {
                           <input
                               className="m-sm-2"
                               type="text"
+                              maxLength={30}
                               value={nameInput}
                               onChange={(event) => setNameInput(event.target.value)}
                           />

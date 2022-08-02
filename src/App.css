@@ -60,6 +60,7 @@ body{
     border: 1px solid black;
     border-radius: 5px;
     padding: 1.5em;
+    width: 70%;
 }
 
 .messages_box{
@@ -104,3 +105,17 @@ body{
     padding: 5px 15px; 
     margin: 15px;
 }
+
+.main_section{
+    display: flex;
+    flex-direction: row;
+}
+
+.box{
+    border: 1px solid black;
+    padding: 1em;
+    margin-left: 2em;
+    border-radius: 5px;
+}
+
+.right_box{ width: 30%;}

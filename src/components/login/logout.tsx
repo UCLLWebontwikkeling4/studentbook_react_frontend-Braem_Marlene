@@ -15,6 +15,8 @@ const Logout: React.FC = () => {
         try {
             // await UserService.logout();
             window.sessionStorage.removeItem("loggedinUser");
+            window.sessionStorage.removeItem("loggedinUserStatus");
+            
             navigate("/");
             window.location.reload();
         } catch (any) {
