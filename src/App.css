@@ -119,3 +119,7 @@ body{
 }
 
 .right_box{ width: 30%;}
+
+.box_marge{
+    margin-top: 2em;
+}
